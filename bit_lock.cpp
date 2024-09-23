@@ -10,6 +10,7 @@ int main(int num, char** args) {
     char* filename_in = args[2];
     char* filename_out = args[3];
     ifstream fin(filename_in, ios::in | ios::binary);
+    if (!fin.good()) return 2;
     ofstream fout(filename_out, ios::out | ios::binary);
     fin.seekg(0, ios::end);
     ull len = fin.tellg(), i = 0;
